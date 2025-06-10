@@ -1,5 +1,21 @@
-# Vue 3 + TypeScript + Vite
+# UI
+*UI* est composé des composants utilisés dans les autres projets vite/vuejs
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Le fichier [src/vite-env.d.ts](src/vite-env.d.ts) permet de ne pas avoir a écrire à chaque fois `/index.vue` dans les imports des `@ui`.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+# Scripts
+|CMD|DESCRIPTION|
+|-|-|
+|`npm run storybook`| Lancer l'application de dev|
+||
+
+# GITLAB
+```sh
+# Config exchange repo externe
+git config --local user.name "Administrator"
+git config --local user.email "gitlab_admin_0ac485@example.com"
+git remote add origin https://gitlab.local/storybook/storybook.git
+
+#Push
+git push --set-upstream origin --all
+```

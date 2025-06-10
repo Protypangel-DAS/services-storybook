@@ -1,5 +1,9 @@
 import type { StorybookConfig } from '@storybook/vue3-vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
+
+import { URL } from 'node:url'
+const pathname = new URL('../src', import.meta.url).pathname;
+
+const defaultExtensions = ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'];
 
 const config: StorybookConfig = {
   "stories": [
@@ -18,11 +22,17 @@ const config: StorybookConfig = {
     "options": {}
   },  
   viteFinal: async (config) => {
-    (config.plugins ??= []).push(tsconfigPaths());
 
     config.resolve ??= {};
     config.resolve.alias ??= {};
-    config.resolve.alias['@ui'] = '../ui';
+    config.resolve.alias['@'] = pathname;
+    config.resolve.alias['@ui'] = pathname + '/ui';
+
+    config.resolve.extensions = [
+      ...(config.resolve.extensions ?? defaultExtensions),
+      '.vue'      
+    ];
+
     return config;
   },
 };
