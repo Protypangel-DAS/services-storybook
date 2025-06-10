@@ -1,9 +1,10 @@
 import type { StorybookConfig } from '@storybook/vue3-vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 const config: StorybookConfig = {
   "stories": [
     "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "../src/**/Button.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
     "@storybook/addon-onboarding",
@@ -15,6 +16,14 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/vue3-vite",
     "options": {}
-  }
+  },  
+  viteFinal: async (config) => {
+    (config.plugins ??= []).push(tsconfigPaths());
+
+    config.resolve ??= {};
+    config.resolve.alias ??= {};
+    config.resolve.alias['@ui'] = '../ui';
+    return config;
+  },
 };
 export default config;
