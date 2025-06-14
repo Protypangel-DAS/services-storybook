@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import { fn } from 'storybook/test';
 
-import MyHeader from '@ui/Header/Header.vue';
+import MyHeader from '../ui/Header/Header.vue';
 
 const meta = {
   /* 👇 The title prop is optional.

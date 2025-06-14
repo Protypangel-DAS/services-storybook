@@ -1,6 +1,5 @@
 import type { StorybookConfig } from '@storybook/vue3-vite';
 
-import { URL } from 'node:url'
 const pathname = new URL('../src', import.meta.url).pathname;
 
 const defaultExtensions = ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'];
@@ -8,7 +7,7 @@ const defaultExtensions = ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'];
 const config: StorybookConfig = {
   "stories": [
     "../src/**/*.mdx",
-    "../src/**/Button.stories.@(js|jsx|mjs|ts|tsx)"
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
     "@storybook/addon-onboarding",

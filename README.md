@@ -1,8 +1,6 @@
 # UI
 *UI* est composé des composants utilisés dans les autres projets vite/vuejs
 
-Le fichier [src/vite-env.d.ts](src/vite-env.d.ts) permet de ne pas avoir a écrire à chaque fois `/index.vue` dans les imports des `@ui`.
-
 # Scripts
 |CMD|DESCRIPTION|
 |-|-|
@@ -14,7 +12,9 @@ Le fichier [src/vite-env.d.ts](src/vite-env.d.ts) permet de ne pas avoir a écri
 # Config exchange repo externe
 git config --local user.name "Administrator"
 git config --local user.email "gitlab_admin_0ac485@example.com"
-git remote add origin https://gitlab.local/storybook/storybook.git
+git remote add origin http://gitlab.local/storybook/storybook.git
+
+# Reset username and password
 
 #Push
 git push --set-upstream origin --all

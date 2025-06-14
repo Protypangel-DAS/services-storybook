@@ -1,4 +1,11 @@
 {
+  "vueCompilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@ui/*": ["src/ui/**", "../src/ui/**", "../ui/**"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
