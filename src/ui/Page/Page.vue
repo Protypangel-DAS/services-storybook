@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article style="color: #000">
     <my-header :user="user" @login="onLogin" @logout="onLogout" @create-account="onCreateAccount" />
 
     <section class="storybook-page">

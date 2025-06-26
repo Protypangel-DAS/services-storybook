@@ -1,6 +1,6 @@
 {
   "name": "@alif/storybook",
-  "version": "0.1.0",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -33,6 +33,7 @@
     "vue-tsc": "^2.2.8"
   },
   "files": [
-    "src/ui"
+    "src/ui/**/*.vue",
+    "src/ui/**/*.css"
   ]
 }

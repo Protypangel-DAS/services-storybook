@@ -1,9 +1,15 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button 
+    type="button" 
+    :class="classes" 
+    @click="onClick" 
+    :style="style">
+    {{ label }} {{  counter  }}
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 import './button.css';
 
@@ -29,6 +35,8 @@ const props = withDefaults(
   { primary: false }
 );
 
+const counter = ref(0);
+
 const emit = defineEmits<{
   (e: 'click', id: number): void;
 }>();
@@ -45,6 +53,7 @@ const style = computed(() => ({
 }));
 
 const onClick = () => {
-  emit('click', 1);
+  counter.value++;
+  emit('click', counter.value);
 };
 </script>
